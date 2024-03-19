@@ -5,7 +5,7 @@ import Home from './routes/Home';
 import Menu from './routes/Menu';
 import Cart from './routes/Cart';
 import Orders from './routes/Orders';
-import Account from './routes/Account';
+import Profile from './routes/Account';
 import LastPage from './routes/LastPage';
 import ParticularItem from './components/Cart/ParticularItem';
 import { Provider } from 'react-redux';
@@ -14,6 +14,9 @@ import { Toaster } from 'react-hot-toast';
 import { getTotals } from './components/redux/ShoppingCart';
 import ParticularCuisines from './components/Cart/ParticularCuisines';
 
+
+import Login from './routes/login';
+import Register from './routes/userRegistration';
 function App() {
 
   store.dispatch(getTotals())
@@ -25,7 +28,9 @@ function App() {
           <Route path="/menu" element={<Menu />}/>
           <Route path="/cart" element={<Cart />}/>
           <Route path="/orders" element={<Orders />}/>
-          <Route path="/account" element={<Account/>}/>
+          <Route path="/profile" element={<Profile />}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
           <Route path="/item/:id" element={<ParticularItem/>}/>
           <Route path="/foodtype/:id" element={<ParticularCuisines/>}/>
           <Route path="/confirm" element={<LastPage/>} />
