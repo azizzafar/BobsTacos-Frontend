@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Logout from "./logout";
+import Logout from "./Logout";
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,7 +39,9 @@ const Login = () => {
           sessionStorage.setItem('email', resp.email);
           sessionStorage.setItem('firstName', resp.firstName);
           sessionStorage.setItem('lastName', resp.lastName);
-          navigate('/profile');
+          sessionStorage.setItem('userId', resp.id); // Store the user ID
+          navigate('/account');
+          window.location.reload();
         } else {
           toast.error('Please enter valid credentials');
         }
@@ -94,8 +94,8 @@ const Login = () => {
               </div>
             </div>
             <div className="card-footer">
-              <button type="submit" className="btn btn-primary">Login</button> |
-              <Link className="btn btn-success" to={'/register'}>New User</Link>
+              <button type="submit" className="btn-primary">Login</button>
+              <Link className="btn-success" to={'/register'}>New User</Link>
               {sessionStorage.getItem('token') ? (
                 <>
                   <span>Welcome, {sessionStorage.getItem('firstName')} {sessionStorage.getItem('lastName')}</span>

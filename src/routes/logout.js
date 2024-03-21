@@ -8,10 +8,10 @@ const Logout = () => {
     // Clear sessionStorage
     sessionStorage.clear();
     // Redirect to login page
-    navigate('/');
+    navigate('/register');
   };
   return (
-    <button onClick={handleLogout} className="btn btn-danger">Logout</button>
+    <button onClick={handleLogout} className="btn-logout">Logout</button>
   );
 };
 

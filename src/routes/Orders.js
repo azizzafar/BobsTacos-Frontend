@@ -93,7 +93,7 @@ const Orders = () => {
             <div className="total-container">
               <h2 className="totl">SubTotal: {amount+"$"}</h2>
               <h2 className="totl">Tax: {amount*2/100+"$"}</h2>  
-              <h2 className="totl">Grand Total: {amount+(amount*2/100)+"$"}</h2>
+              <h2 className="totl">Total after Tax: {amount+(amount*2/100)+"$"}</h2>
             </div>
             <div className="payment">
                 <h2 className="text-h2">Payment Method</h2>

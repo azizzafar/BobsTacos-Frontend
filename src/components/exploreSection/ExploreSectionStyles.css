@@ -66,15 +66,17 @@
 
 .delivery-time{
     position: absolute;
-    right: 10px;
-    bottom: 10px;
-    opacity: 0.8;
-    background-color: var(--primary-bg);
-    backdrop-filter: blur(4px);
-    font-weight: 600;
-    font-size: 12px;
-    padding: 2px 5px 3px;
-    border-radius: 4px;
+  right: 10px;
+  bottom: 10px;
+  background-color: var(--primary-bg);
+  backdrop-filter: blur(4px);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 5px; /* Increased padding for better spacing */
+  border-radius: 4px;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Arrange items vertically */
+  align-items: flex-end; /* Align items to the right */
 }
 
 
@@ -125,3 +127,24 @@
     background-color: var(--primary-bg);
     border: 1px solid black;
 }
+.add-to-wishlist-btn {
+    background-color: #ff7f50; /* Set background color */
+    color: #fff; /* Set text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 4px; /* Add border radius */
+    transition: background-color 0.3s; /* Add transition effect for background color */
+    margin-left: 5px;
+    padding:5px;
+  }
+  
+  .add-to-wishlist-btn:hover {
+    background-color: #ff6347; /* Change background color on hover */
+  }
+  .cart-container {
+    background-color: #ffffff; /* Background color */
+    border: 1px solid #cccccc; /* Border */
+    margin: 2px; /* Margin from the top */
+    border-radius: 8px; /* Border radius */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }

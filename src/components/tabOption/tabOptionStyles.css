@@ -1,6 +1,5 @@
 .tab-options{
-    background-color: rgb(255, 181, 44);
-    box-shadow: var(--border-white) 0px -0.5px 0px inset;
+    background-color: rgb(233, 195, 130);
 }
 
 .options-wrapper{
@@ -35,5 +34,5 @@
 }
 
 .active-tab .tab-name{
-    color: white;
+    color: black;
 }

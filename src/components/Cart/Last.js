@@ -3,8 +3,10 @@ import Navbar from '../header/Navbar'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+
 const Last = () => {
     const navigate = useNavigate();
+
     const handleBack = () => {
     navigate("/orders");
   };
@@ -24,7 +26,7 @@ const Last = () => {
                 <div className='large-container'>
                     <i className="fa-solid fa-arrow-left" onClick={handleBack}>Back</i>
                     <div>
-                    <h1>Grand Total: {amount + "$"}</h1>
+                    <h1>Total after Tax: {amount+(amount*2/100) + "$"}</h1>
                     <button className='place-btn' onClick={handlePlace}>{name}</button>
                     </div>
                 </div>
@@ -33,7 +35,7 @@ const Last = () => {
            <div className='large-container'>
                 <div className='Lasttotal-container'>
                     <img src='https://i.pinimg.com/originals/90/13/f7/9013f7b5eb6db0f41f4fd51d989491e7.gif' alt='yes'/>
-                    <h1>Order Placed Succesfully!</h1>
+                    <h1>Order Sent!</h1>
                 </div>
             </div>
         )}

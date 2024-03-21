@@ -7,6 +7,7 @@ const initialState = {
     cartItems: [],
     quantity: 0,
     amount: 0,
+    isLoggedIn: false,
 }
 
 const ShoppingCart = createSlice({
@@ -37,6 +38,10 @@ const ShoppingCart = createSlice({
                 state.wish.push(temp);
             };
         },
+        setLoggedInStatus: (state, action) => { // Define setLoggedInStatus action
+            state.isLoggedIn = action.payload;
+        },
+
         removeWishlist(state, action){
             const nextWishItems =  state.wish.filter(
                  (cartItem) => cartItem.id !== action.payload.id
@@ -85,5 +90,5 @@ const ShoppingCart = createSlice({
     }
 })
 
-export const  {AddCart, removeCart, AddWishlist, removeWishlist, decreaseCart, clearCart, getTotals} = ShoppingCart.actions;
+export const  {AddCart, removeCart, AddWishlist, removeWishlist, decreaseCart, clearCart, getTotals, setLoggedInStatus} = ShoppingCart.actions;
 export default ShoppingCart.reducer

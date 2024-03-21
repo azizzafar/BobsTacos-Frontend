@@ -76,10 +76,20 @@
     font-size: 16px;
     font-weight: normal;
     margin: 12px;
-    background-color: rgb(255, 181, 44);
-    color: white;
+    color: rgb(20, 17, 17);
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 20px;
     border: none;
-}
 
+}
+.reset{
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 12px;
+    background-color: rgb(199, 132, 45);
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor:pointer;
+}

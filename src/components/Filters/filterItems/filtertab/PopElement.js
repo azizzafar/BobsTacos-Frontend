@@ -10,11 +10,11 @@ export const variety = [
   },
   {
     id: "2",
-    type: "Breakfast meals",
+    type: "Drinks",
   },
   {
     id: "3",
-    type: "Drinks",
+    type: "Sushi",
   },
   {
     id: "4",
@@ -22,12 +22,9 @@ export const variety = [
   },
   {
     id: "5",
-    type: "Sushi",
-  },
-  {
-    id: "6",
     type: "Breakfast",
-  },
+  }
+
 ];
 
 export const setAtomPrice = atom({
@@ -231,18 +228,7 @@ const PopElement = () => {
       <button className="reset-button" onClick={resetFilters}>
         Reset Filters
       </button>
-      <div className={toggleState === 2 ? "content active-content" : "content"}>
-        
-        {filteredItems.map(item => (
-          <div key={item.id}>
-            <h3>{item.name}</h3>
-            <p>Food Type: {item.foodType}</p>
-            <p>Price: {item.price}</p>
-            <p>Rating: {item.rating}</p>
-            {/* Add more item details as needed */}
-          </div>
-        ))}
-      </div>
+      
     </div>
     
   );

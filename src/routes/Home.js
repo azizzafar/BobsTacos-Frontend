@@ -3,6 +3,7 @@ import Navbar from '../components/header/Navbar';
 import Main from '../components/Main';
 import Footer from '../components/footer/Footer';
 import DeliveryCollections from '../components/Delivery/DeliveryCollection/DeliveryCollections';
+import Profile from './Profile';
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
         buttonText="Order Online"
         url="/item"
         btnclass="show"
-      />
+      />   
       <DeliveryCollections />
       <Footer />
     </>

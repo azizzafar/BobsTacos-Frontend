@@ -1,10 +1,10 @@
 import React from 'react';
 import '../filterItems/FilterItem.css';
 import Popup from 'reactjs-popup';
-import PopElement from '../filterItems/filtertab/PopElement';
+import PopElement, { setAtomActive, setAtomCheckBox } from '../filterItems/filtertab/PopElement';
 import { CiFilter } from "react-icons/ci";
 import { setAtomTime, setAtomRating, setAtomPrice } from '../filterItems/filtertab/PopElement';
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useResetRecoilState } from "recoil";
 
 
 const FilterItem = ({filter}) => {
@@ -12,6 +12,23 @@ const FilterItem = ({filter}) => {
   const filterTime = useRecoilValue(setAtomTime);
   const filterRating = useRecoilValue(setAtomRating);
   const filterPrice = useRecoilValue(setAtomPrice);
+ 
+
+  const resetTime = useResetRecoilState(setAtomTime);
+  const resetRating = useResetRecoilState(setAtomRating);
+  const resetPrice = useResetRecoilState(setAtomPrice);
+  const resetCheckBox = useResetRecoilState(setAtomCheckBox);
+  const resetActive = useResetRecoilState(setAtomActive);
+
+  const handleResetFilters = () => {
+
+    resetTime();
+    resetRating();
+    resetPrice();
+    resetCheckBox();
+    resetActive();
+
+  };
   
   return (
     <>
@@ -44,9 +61,11 @@ const FilterItem = ({filter}) => {
     </div>
 
     <div className='dyn-filter-btn'>
-    <button id="fil-btn-time">{filterTime + "+ Min"}</button>
-    <button id="fil-btn-rating">{filterRating + "+ Rating"}</button>
-    <button id="fil-btn-price">{filterPrice + "+ Price"}</button>
+    {filterTime !== 50 && <button id="fil-btn-time">{filterTime + "+ Min"}</button>}
+      {filterRating !== 5 && <button id="fil-btn-rating">{filterRating + "+ Rating"}</button>}
+      {filterPrice !== 50 && <button id="fil-btn-price">{filterPrice + "+ Price"}</button>}
+    <button className='reset' onClick={handleResetFilters}>Reset Filter</button>
+  
     </div>
     </>
   )

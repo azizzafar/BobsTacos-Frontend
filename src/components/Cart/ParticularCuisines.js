@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "../Cart/ParticularItemStyles.css";
 import { useParams, Link } from "react-router-dom";
-import { restaurant } from "../Lists";
+import { createWishlist, restaurant } from "../Lists";
 import Navbar from "../header/Navbar";
 import { useDispatch } from "react-redux";
 import { AddCart, AddWishlist } from "../redux/ShoppingCart";
@@ -10,9 +10,9 @@ import Slider from "react-slick";
 import NextArrow from "../Carousal/nextArrow";
 import PrevArrow from "../Carousal/prevArrow";
 
-
 const ParticularCuisines = () => {
   const [current, setCurrent] = useState("");
+  const ID = sessionStorage.getItem('userId')
 
   const { id } = useParams();
   const val = parseInt(id);
@@ -34,9 +34,21 @@ const ParticularCuisines = () => {
     dispatch(AddCart(item));
     toast.success("Item added in cart!");
   };
-  const addToWish = (item) => {
-    dispatch(AddWishlist(item));
-    toast.success("Item added in Wishlist!");
+  const addToWish = async (item, userId, itemId) => {
+    try {
+      // Create wishlist for the user and menu item
+      await createWishlist(userId, itemId);
+  
+      // Display a success message to the user
+      toast.success("Item added to wishlist successfully");
+  
+      // Dispatch action to add the item to the Redux store
+      dispatch(AddWishlist(item));
+    } catch (error) {
+      // Handle any errors that occur during the wishlist creation process
+      console.error('Error creating wishlist:', error);
+      toast.error('Failed to add item to wishlist. Please try again.');
+    }
   };
 
   const settings = {
@@ -88,7 +100,7 @@ const ParticularCuisines = () => {
                     </button>
                     <button
                       className="main-btn"
-                      onClick={() => addToWish(item)}
+                      onClick={() => addToWish(item, ID, item.Id)}
                     >
                       <i class="fa-regular fa-heart"></i>
                       Wishlist

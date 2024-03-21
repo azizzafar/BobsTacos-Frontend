@@ -5,7 +5,7 @@ import Home from './routes/Home';
 import Menu from './routes/Menu';
 import Cart from './routes/Cart';
 import Orders from './routes/Orders';
-import Profile from './routes/Account';
+
 import LastPage from './routes/LastPage';
 import ParticularItem from './components/Cart/ParticularItem';
 import { Provider } from 'react-redux';
@@ -13,10 +13,14 @@ import store from './components/store';
 import { Toaster } from 'react-hot-toast';
 import { getTotals } from './components/redux/ShoppingCart';
 import ParticularCuisines from './components/Cart/ParticularCuisines';
+import Login from './routes/Login';
+import Logout from './routes/Logout';
+import Register from './routes/Register';
+import Profile from './routes/Profile';
+import AdminProfile from './routes/AdminProfile';
+import Account from './routes/Account';
 
 
-import Login from './routes/login';
-import Register from './routes/userRegistration';
 function App() {
 
   store.dispatch(getTotals())
@@ -25,12 +29,14 @@ function App() {
      <Provider store={store}>
         <Routes>
           <Route path="/" element={<Home />}/>
+          <Route path="/register" element={<Register />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/" element={<Logout />}/>
           <Route path="/menu" element={<Menu />}/>
           <Route path="/cart" element={<Cart />}/>
           <Route path="/orders" element={<Orders />}/>
-          <Route path="/profile" element={<Profile />}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/register" element={<Register/>}/>
+          <Route path="/account" element={<Profile/>}/>
+          <Route path="/admin" element={<AdminProfile/>}/>
           <Route path="/item/:id" element={<ParticularItem/>}/>
           <Route path="/foodtype/:id" element={<ParticularCuisines/>}/>
           <Route path="/confirm" element={<LastPage/>} />

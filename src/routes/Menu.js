@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/header/Navbar';
 import TabOption from '../components/tabOption';
 import Delivery from '../components/Delivery/Delivery';
-import Dessert from '../components/DinningOut/Dessert';
+import Dessert from '../components/dessert/Dessert';
 
 
 const Menu = () => {
