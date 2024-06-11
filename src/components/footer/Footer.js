@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="footer">
             <div className="top">
                 <div>
-                    <h1>Dear Foody</h1>
+                    <h1>Bobs Taco!</h1>
                     <p>Your Taste Our Service</p>
                 </div>
                 
@@ -32,10 +32,10 @@ const Footer = () => {
                 </div>
                 <div>
                     <h4>Address</h4>
-                    <p>12 floor, MG Road, New Complex Vallai, <br></br>Bengluru</p>
+                    <p>Bobs Taco! <br></br>Norway</p>
                    
                     <h4>Contact Us</h4>
-                    <p>Tel No.4324242423</p>
+                    <p>Tel No.4324242423</p>    
                 </div>
                 
                 <div>

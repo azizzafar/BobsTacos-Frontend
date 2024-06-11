@@ -51,8 +51,8 @@
 }
 
 .explore-card-cover{
-    height: 248px;
-    width: 340px;
+    height: 148px;
+    width: 240px;
     border-radius: 15px;
     position: relative;
 }
@@ -127,24 +127,40 @@
     background-color: var(--primary-bg);
     border: 1px solid black;
 }
-.add-to-wishlist-btn {
-    background-color: #ff7f50; /* Set background color */
-    color: #fff; /* Set text color */
-    border: none; /* Remove border */
-    cursor: pointer; /* Add cursor pointer */
-    border-radius: 4px; /* Add border radius */
-    transition: background-color 0.3s; /* Add transition effect for background color */
-    margin-left: 5px;
-    padding:5px;
-  }
-  
-  .add-to-wishlist-btn:hover {
-    background-color: #ff6347; /* Change background color on hover */
-  }
+
   .cart-container {
     background-color: #ffffff; /* Background color */
     border: 1px solid #cccccc; /* Border */
     margin: 2px; /* Margin from the top */
     border-radius: 8px; /* Border radius */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }
+  
+  .add-to-wishlist-btn {
+    background-color: gold; 
+    color: #fff; 
+    border: none;
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background-color 0.3s; 
+    margin-left: 5px;
+    padding:5px;
+  }
+
+  .add-to-wishlist-btn:hover {
+    background-color: #94a063; 
+  }
+  .add-to-cart-btn {
+    background-color: rgb(14, 136, 51); 
+    color: #fff; 
+    border: none;
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background-color 0.3s; 
+    margin-left: 5px;
+    padding:5px;
+  }
+
+  .add-to-cart-btn:hover {
+    background-color: #94a063;
   }

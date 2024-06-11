@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import Logout from "./Logout";
 import Login from "./Login";
-import { AddWishlist } from "../components/redux/ShoppingCart";
+import { AddWishlist, removeWishlist } from "../components/redux/ShoppingCart";
 
 import { Link} from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -17,7 +17,6 @@ const Profile = ({ showNavbar }) => {
     const ID = sessionStorage.getItem('userId')
     const { wish } = useSelector((state) => state.user);
     console.log("User ID:", ID); // Log user ID
-    console.log("first Name:", firstName); // Log user ID
 
     const [wishlistDetails, setWishlistDetails] = useState([]);
 
@@ -30,13 +29,11 @@ const Profile = ({ showNavbar }) => {
     const addToWishlistIfMatchingUser = () => {
         wishlistDetails.forEach(item => {
           if (item.userId === ID) {
-            // Add menuItem to the wishlist using dispatch
-            addToWish(item.menuItem); // Add menuItem to the wishlist
+            addToWish(item.menuItem); 
           }
         });
       };
 
-    // Call addToWishlistIfMatchingUser function when the component mounts
     useEffect(() => {
         addToWishlistIfMatchingUser();
         }, [wishlistDetails]); // Trigger the effect whenever wishlistDetails changes
@@ -47,6 +44,11 @@ const Profile = ({ showNavbar }) => {
         dispatch(AddWishlist(item));
         //toast.success("Item added in Wishlist!");
     };
+
+    const removeFromWishlist = (itemId) => {
+        // Dispatch the removeWishlist action with the item id
+        dispatch(removeWishlist({ id: itemId }));
+      }
 
     const renderProfileContent = () => {
         if (firstName && lastName) {
@@ -76,6 +78,7 @@ const Profile = ({ showNavbar }) => {
                             <div className="food-name">{food_cart.name}</div>
                             <div className="rat-pir">
                             <div className="approx-price">{food_cart.price + "$"}</div>
+                            <button className="remove_btn" onClick={() => removeFromWishlist(food_cart.id)}>Remove</button>
                             </div>
                         </div>
                         ))

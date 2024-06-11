@@ -40,6 +40,7 @@ const Login = () => {
           sessionStorage.setItem('firstName', resp.firstName);
           sessionStorage.setItem('lastName', resp.lastName);
           sessionStorage.setItem('userId', resp.id); // Store the user ID
+          sessionStorage.setItem('userrole',resp.role);
           navigate('/account');
           window.location.reload();
         } else {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CreateMenuItemForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const CreateMenuItemForm = () => {
     deliveryTime: 0,
     image: ''
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,6 +41,7 @@ const CreateMenuItemForm = () => {
 
       const data = await response.json();
       console.log('MenuItem created successfully:', data);
+      navigate('/');
       // Display success message to the user
     } catch (error) {
       console.error('Error creating menuItem:', error);
@@ -46,7 +50,7 @@ const CreateMenuItemForm = () => {
   };
 
   return (
-    <div>
+    <div className='create-menu-item'>
       <form onSubmit={handleSubmit}>
         <input type="text" name="id" placeholder="Id" value={formData.id} onChange={handleChange} />
         <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />

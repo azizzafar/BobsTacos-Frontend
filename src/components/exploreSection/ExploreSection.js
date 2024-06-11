@@ -80,8 +80,8 @@ const ExploreSection = () => {
             </Link>
             {restaurant.deliveryTime <= coilTime && (
               <div className="delivery-time">{restaurant.deliveryTime + "min"}
-                    <button className="add-to-wishlist-btn" onClick={() => addToWish(restaurant, ID, restaurant.id)}>Favorite</button>
-          <button className="add-to-wishlist-btn" onClick={() => addToCart(restaurant)}>Add to Cart</button>
+                    <button className="add-to-wishlist-btn" onClick={() => addToWish(restaurant, ID, restaurant.id)}><i className="fi fi-rr-star absolute-center"></i></button>
+          <button className="add-to-cart-btn" onClick={() => addToCart(restaurant)}>Add to Cart</button>
               </div>
               
             )}

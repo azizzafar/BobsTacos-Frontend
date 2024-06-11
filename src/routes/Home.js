@@ -8,7 +8,8 @@ import Profile from './Profile';
 const Home = () => {
   return (
     <>
-      <Navbar/>
+    <div className='admin-profile'>
+    <Navbar/>
       <Main 
         MainImg= "https://bobstacos.com/wp-content/uploads/2016/08/logo-white-shadow-004.png"
         title="BOBS TACOS!!"
@@ -19,6 +20,8 @@ const Home = () => {
       />   
       <DeliveryCollections />
       <Footer />
+    </div>
+     
     </>
   )
 };

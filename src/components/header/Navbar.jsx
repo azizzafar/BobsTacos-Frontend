@@ -27,7 +27,7 @@ const Navbar = () => {
           <Link to="/account" className="navbar-link">Profile</Link>
           </li>
         <li className="navbar-item">
-          <Link to="/admin" className="navbar-link">AdminProfile</Link>
+          <Link to="/admin" className="navbar-link">Admin</Link>
           
         </li>
       
